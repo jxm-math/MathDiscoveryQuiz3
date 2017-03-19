@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -27,132 +28,210 @@
         android:textColor="@android:color/holo_orange_light"
         android:textSize="48sp" />
 
-    <LinearLayout
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/choice_grid"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        app:alignmentMode="alignBounds"
 
-        <View
+        app:columnCount="3"
+        app:rowOrderPreserved="false"
+        app:useDefaultMargins="true">
+
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_height="0dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0"
-            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/picture1"
+                style="@style/CheckImageButton"
+                android:src="@drawable/fractal1" />
 
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignRight="@+id/picture1"
+                android:layout_alignTop="@+id/picture1"
+                android:layout_margin="8dp"
+                android:src="@drawable/check" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+        </RelativeLayout>
 
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/fractal1" />
-
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/fractal2" />
-
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/fractal3" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/golden1" />
-
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/golden2" />
-
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/golden3" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/simplex1" />
-
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/simplex2" />
-
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/simplex3" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <View
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_height="0dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
 
-    </LinearLayout>
+            <ImageButton
+                android:id="@+id/picture2"
+                style="@style/CheckImageButton"
+                android:src="@drawable/fractal2" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignRight="@+id/picture2"
+                android:layout_alignTop="@+id/picture2"
+                android:layout_margin="8dp"
+                android:src="@drawable/check" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+
+            <ImageButton
+                android:id="@+id/picture3"
+                style="@style/CheckImageButton"
+                android:src="@drawable/fractal3" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignRight="@+id/picture3"
+                android:layout_alignTop="@+id/picture3"
+                android:layout_margin="8dp"
+                android:src="@drawable/check" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+
+            <ImageButton
+                android:id="@+id/picture4"
+                style="@style/CheckImageButton"
+                android:src="@drawable/golden1" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignRight="@+id/picture4"
+                android:layout_alignTop="@+id/picture4"
+                android:layout_margin="8dp"
+                android:src="@drawable/check" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+
+            <ImageButton
+                android:id="@+id/picture5"
+                style="@style/CheckImageButton"
+                android:src="@drawable/golden2" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignRight="@+id/picture5"
+                android:layout_alignTop="@+id/picture5"
+                android:layout_margin="8dp"
+                android:src="@drawable/check" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+
+            <ImageButton
+                android:id="@+id/picture6"
+                style="@style/CheckImageButton"
+                android:src="@drawable/golden3" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignRight="@+id/picture6"
+                android:layout_alignTop="@+id/picture6"
+                android:layout_margin="8dp"
+                android:src="@drawable/check" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+
+            <ImageButton
+                android:id="@+id/picture7"
+                style="@style/CheckImageButton"
+                android:src="@drawable/simplex1" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignRight="@+id/picture7"
+                android:layout_alignTop="@+id/picture7"
+                android:layout_margin="8dp"
+                android:src="@drawable/check" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+
+            <ImageButton
+                android:id="@+id/picture8"
+                style="@style/CheckImageButton"
+                android:src="@drawable/simplex2" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignRight="@+id/picture8"
+                android:layout_alignTop="@+id/picture8"
+                android:layout_margin="8dp"
+                android:src="@drawable/check" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+
+            <ImageButton
+                android:id="@+id/picture9"
+                style="@style/CheckImageButton"
+                android:src="@drawable/simplex3" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignRight="@+id/picture9"
+                android:layout_alignTop="@+id/picture9"
+                android:layout_margin="8dp"
+                android:src="@drawable/check" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.GridLayout>
+
+
 
     <Button
         android:layout_width="wrap_content"
@@ -162,3 +241,4 @@
         android:text="check" />
 
 </LinearLayout>
+
