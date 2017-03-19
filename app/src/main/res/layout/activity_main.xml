@@ -15,7 +15,7 @@
         android:padding="8dp"
         android:text="Which of the following pictures has to do with..."
         android:textColor="@android:color/holo_orange_dark"
-        android:textSize="25sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
         android:text="fractals?"
         android:textAllCaps="true"
         android:textColor="@android:color/holo_orange_light"
-        android:textSize="48sp" />
+        android:textSize="40sp" />
 
     <android.support.v7.widget.GridLayout
         android:id="@+id/choice_grid"
@@ -49,15 +49,14 @@
             <ImageButton
                 android:id="@+id/picture1"
                 style="@style/CheckImageButton"
-                android:src="@drawable/fractal1" />
+                android:src="@drawable/fractal1"
+                android:onClick="checkPicture1" />
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/check1"
+                style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture1"
-                android:layout_alignTop="@+id/picture1"
-                android:layout_margin="8dp"
-                android:src="@drawable/check" />
+                android:layout_alignTop="@+id/picture1"/>
 
         </RelativeLayout>
 
@@ -70,15 +69,14 @@
             <ImageButton
                 android:id="@+id/picture2"
                 style="@style/CheckImageButton"
-                android:src="@drawable/fractal2" />
+                android:src="@drawable/fractal2"
+                android:onClick="checkPicture2"/>
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/check2"
+                style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture2"
-                android:layout_alignTop="@+id/picture2"
-                android:layout_margin="8dp"
-                android:src="@drawable/check" />
+                android:layout_alignEnd="@+id/picture2" />
 
         </RelativeLayout>
 
@@ -91,15 +89,14 @@
             <ImageButton
                 android:id="@+id/picture3"
                 style="@style/CheckImageButton"
-                android:src="@drawable/fractal3" />
+                android:src="@drawable/fractal3"
+                android:onClick="checkPicture3"/>
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/check3"
+                style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture3"
-                android:layout_alignTop="@+id/picture3"
-                android:layout_margin="8dp"
-                android:src="@drawable/check" />
+                android:layout_alignTop="@+id/picture3"/>
 
         </RelativeLayout>
 
@@ -112,15 +109,14 @@
             <ImageButton
                 android:id="@+id/picture4"
                 style="@style/CheckImageButton"
-                android:src="@drawable/golden1" />
+                android:src="@drawable/golden1"
+                android:onClick="checkPicture4"/>
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/check4"
+                style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture4"
-                android:layout_alignTop="@+id/picture4"
-                android:layout_margin="8dp"
-                android:src="@drawable/check" />
+                android:layout_alignTop="@+id/picture4"/>
 
         </RelativeLayout>
 
@@ -133,15 +129,14 @@
             <ImageButton
                 android:id="@+id/picture5"
                 style="@style/CheckImageButton"
-                android:src="@drawable/golden2" />
+                android:src="@drawable/golden2"
+                android:onClick="checkPicture5"/>
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/check5"
+                style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture5"
-                android:layout_alignTop="@+id/picture5"
-                android:layout_margin="8dp"
-                android:src="@drawable/check" />
+                android:layout_alignTop="@+id/picture5"/>
 
         </RelativeLayout>
 
@@ -154,15 +149,14 @@
             <ImageButton
                 android:id="@+id/picture6"
                 style="@style/CheckImageButton"
-                android:src="@drawable/golden3" />
+                android:src="@drawable/golden3"
+                android:onClick="checkPicture6"/>
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/check6"
+                style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture6"
-                android:layout_alignTop="@+id/picture6"
-                android:layout_margin="8dp"
-                android:src="@drawable/check" />
+                android:layout_alignTop="@+id/picture6"/>
 
         </RelativeLayout>
 
@@ -175,15 +169,14 @@
             <ImageButton
                 android:id="@+id/picture7"
                 style="@style/CheckImageButton"
-                android:src="@drawable/simplex1" />
+                android:src="@drawable/simplex1"
+                android:onClick="checkPicture7"/>
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/check7"
+                style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture7"
-                android:layout_alignTop="@+id/picture7"
-                android:layout_margin="8dp"
-                android:src="@drawable/check" />
+                android:layout_alignTop="@+id/picture7"/>
 
         </RelativeLayout>
 
@@ -196,15 +189,14 @@
             <ImageButton
                 android:id="@+id/picture8"
                 style="@style/CheckImageButton"
-                android:src="@drawable/simplex2" />
+                android:src="@drawable/simplex2"
+                android:onClick="checkPicture8"/>
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/check8"
+                style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture8"
-                android:layout_alignTop="@+id/picture8"
-                android:layout_margin="8dp"
-                android:src="@drawable/check" />
+                android:layout_alignTop="@+id/picture8"/>
 
         </RelativeLayout>
 
@@ -217,15 +209,14 @@
             <ImageButton
                 android:id="@+id/picture9"
                 style="@style/CheckImageButton"
-                android:src="@drawable/simplex3" />
+                android:src="@drawable/simplex3"
+                android:onClick="checkPicture9"/>
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/check9"
+                style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture9"
-                android:layout_alignTop="@+id/picture9"
-                android:layout_margin="8dp"
-                android:src="@drawable/check" />
+                android:layout_alignTop="@+id/picture9"/>
 
         </RelativeLayout>
 

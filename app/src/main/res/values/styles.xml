@@ -18,4 +18,13 @@
         <item name="android:scaleType">centerInside</item>
     </style>
 
+    <!-- CheckImage style. -->
+    <style name="CheckImage">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:src">@drawable/check</item>
+    </style>
+
 </resources>
