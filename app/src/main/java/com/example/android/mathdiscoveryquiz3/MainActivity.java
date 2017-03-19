@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.welcome_layout);
     }
 
     boolean pict1 = false;
@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
     boolean pict7 = false;
     boolean pict8 = false;
     boolean pict9 = false;
+
+    /* Switchs view to main activity */
+    public void start(View view) {
+        setContentView(R.layout.activity_main);
+    }
 
     /* Toggles the visibility of the check mark 1*/
     public void checkPicture1(View view) {
