@@ -3,11 +3,20 @@ package com.example.android.mathdiscoveryquiz3;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayout;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+
+import static android.R.attr.max;
 import static android.R.attr.visible;
+import static android.R.id.list;
+import static android.os.Build.VERSION_CODES.M;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,9 +36,25 @@ public class MainActivity extends AppCompatActivity {
     boolean pict8 = false;
     boolean pict9 = false;
 
-    /* Switchs view to main activity */
+    String[] listOfTopics = {"fractal", "golden", "simplex", "exponential", "physics"};
+
+
+
+    int topicsPerGame = 3;
+
+    /* Switches view to main activity */
     public void start(View view) {
         setContentView(R.layout.activity_main);
+
+        /* Shuffles the possible topics */
+        List<Integer> numbersOfTopics = new ArrayList<>();
+        for (int i = 0; i < listOfTopics.length; i++) {
+            numbersOfTopics.add(i);
+        }
+        Collections.shuffle(numbersOfTopics);
+        for (int number : numbersOfTopics){
+            Log.v("Member name: ", listOfTopics[number]);
+        }
     }
 
     /* Toggles the visibility of the check mark 1*/
