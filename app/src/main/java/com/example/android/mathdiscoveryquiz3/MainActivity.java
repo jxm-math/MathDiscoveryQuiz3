@@ -1,5 +1,6 @@
 package com.example.android.mathdiscoveryquiz3;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayout;
@@ -7,12 +8,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+import static android.R.attr.id;
 import static android.R.attr.max;
 import static android.R.attr.visible;
 import static android.R.id.list;
@@ -38,23 +41,78 @@ public class MainActivity extends AppCompatActivity {
 
     String[] listOfTopics = {"fractal", "golden", "simplex", "exponential", "physics"};
 
+    List<Integer> numbersOfTopics = new ArrayList<>();
 
+    List<Integer> numbersOfPictures = new ArrayList<>();
 
-    int topicsPerGame = 3;
+    int stage = 0;
 
     /* Switches view to main activity */
     public void start(View view) {
         setContentView(R.layout.activity_main);
 
         /* Shuffles the possible topics */
-        List<Integer> numbersOfTopics = new ArrayList<>();
         for (int i = 0; i < listOfTopics.length; i++) {
             numbersOfTopics.add(i);
         }
         Collections.shuffle(numbersOfTopics);
+        /* verbose */
         for (int number : numbersOfTopics){
-            Log.v("Member name: ", listOfTopics[number]);
+            Log.v("topic: ", listOfTopics[number]);
         }
+
+        /* Creates the list of possible pictures */
+        Log.v("creation: ", "list of possible pictures succesfully created");
+        for (int i = 0; i < listOfTopics.length * 3; i++) {
+            numbersOfPictures.add(i);
+        }
+
+        buildQuiz();
+
+    }
+
+    /* Builds a new quiz */
+    public void buildQuiz() {
+        TextView topicQuestion = (TextView) findViewById(R.id.topicQuestionView);
+        topicQuestion.setText(listOfTopics[numbersOfTopics.get(stage)] + "?");
+
+
+
+        Collections.shuffle(numbersOfPictures);
+        /* verbose */
+        for (int number : numbersOfPictures){
+            Log.v("topic: ", "" + number);
+        }
+        int assignedCheckButtons = 0;
+        int assignedFalseCheckButtons = 0;
+        int searchedPicture = 0;
+        List<Integer> truePictures = new ArrayList<>();
+        while (assignedCheckButtons < 9) {
+            Log.v("state: ", assignedCheckButtons + " " + assignedFalseCheckButtons + " " + searchedPicture);
+            int identImageButton = getResources().getIdentifier("picture" + (assignedCheckButtons + 1), "id", getPackageName());
+            Log.v("state: ", "recoge el id: " + identImageButton);
+            ImageButton imageButton = (ImageButton) findViewById(identImageButton);
+            int candidate = numbersOfPictures.get(searchedPicture);
+            Log.v("candidate: ", "" + candidate);
+            int identDrawable = getResources().getIdentifier(listOfTopics[candidate / 3] + (candidate % 3 + 1), "drawable", getPackageName());
+
+            if ( candidate / 3 == numbersOfTopics.get(stage) ){
+                imageButton.setImageResource(identDrawable);
+                assignedCheckButtons = assignedCheckButtons + 1;
+                truePictures.add(assignedCheckButtons);
+            } else if ( assignedFalseCheckButtons < 6 ) {
+                imageButton.setImageResource(identDrawable);
+                assignedCheckButtons = assignedCheckButtons + 1;
+                assignedFalseCheckButtons = assignedFalseCheckButtons + 1;
+            }
+
+            searchedPicture = searchedPicture + 1;
+        }
+
+        for (int number : truePictures){
+            Log.v("truePicture: ", "" + number);
+        }
+
     }
 
     /* Toggles the visibility of the check mark 1*/

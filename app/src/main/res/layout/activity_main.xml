@@ -18,12 +18,13 @@
         android:textSize="20sp" />
 
     <TextView
+        android:id="@+id/topicQuestionView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="0"
         android:padding="8dp"
-        android:text="fractals?"
+        android:text="topic?"
         android:textAllCaps="true"
         android:textColor="@android:color/holo_orange_light"
         android:textSize="40sp" />
