@@ -50,14 +50,14 @@
             <ImageButton
                 android:id="@+id/picture1"
                 style="@style/CheckImageButton"
-                android:src="@drawable/fractal1"
-                android:onClick="checkPicture1" />
+                android:onClick="checkPicture1"
+                android:src="@drawable/fractal1" />
 
             <ImageView
                 android:id="@+id/check1"
                 style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture1"
-                android:layout_alignTop="@+id/picture1"/>
+                android:layout_alignTop="@+id/picture1" />
 
         </RelativeLayout>
 
@@ -70,14 +70,14 @@
             <ImageButton
                 android:id="@+id/picture2"
                 style="@style/CheckImageButton"
-                android:src="@drawable/fractal2"
-                android:onClick="checkPicture2"/>
+                android:onClick="checkPicture2"
+                android:src="@drawable/fractal2" />
 
             <ImageView
                 android:id="@+id/check2"
                 style="@style/CheckImage"
-                android:layout_alignRight="@+id/picture2"
-                android:layout_alignEnd="@+id/picture2" />
+                android:layout_alignEnd="@+id/picture2"
+                android:layout_alignRight="@+id/picture2" />
 
         </RelativeLayout>
 
@@ -90,14 +90,14 @@
             <ImageButton
                 android:id="@+id/picture3"
                 style="@style/CheckImageButton"
-                android:src="@drawable/fractal3"
-                android:onClick="checkPicture3"/>
+                android:onClick="checkPicture3"
+                android:src="@drawable/fractal3" />
 
             <ImageView
                 android:id="@+id/check3"
                 style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture3"
-                android:layout_alignTop="@+id/picture3"/>
+                android:layout_alignTop="@+id/picture3" />
 
         </RelativeLayout>
 
@@ -110,14 +110,14 @@
             <ImageButton
                 android:id="@+id/picture4"
                 style="@style/CheckImageButton"
-                android:src="@drawable/golden1"
-                android:onClick="checkPicture4"/>
+                android:onClick="checkPicture4"
+                android:src="@drawable/golden1" />
 
             <ImageView
                 android:id="@+id/check4"
                 style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture4"
-                android:layout_alignTop="@+id/picture4"/>
+                android:layout_alignTop="@+id/picture4" />
 
         </RelativeLayout>
 
@@ -130,14 +130,14 @@
             <ImageButton
                 android:id="@+id/picture5"
                 style="@style/CheckImageButton"
-                android:src="@drawable/golden2"
-                android:onClick="checkPicture5"/>
+                android:onClick="checkPicture5"
+                android:src="@drawable/golden2" />
 
             <ImageView
                 android:id="@+id/check5"
                 style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture5"
-                android:layout_alignTop="@+id/picture5"/>
+                android:layout_alignTop="@+id/picture5" />
 
         </RelativeLayout>
 
@@ -150,14 +150,14 @@
             <ImageButton
                 android:id="@+id/picture6"
                 style="@style/CheckImageButton"
-                android:src="@drawable/golden3"
-                android:onClick="checkPicture6"/>
+                android:onClick="checkPicture6"
+                android:src="@drawable/golden3" />
 
             <ImageView
                 android:id="@+id/check6"
                 style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture6"
-                android:layout_alignTop="@+id/picture6"/>
+                android:layout_alignTop="@+id/picture6" />
 
         </RelativeLayout>
 
@@ -170,14 +170,14 @@
             <ImageButton
                 android:id="@+id/picture7"
                 style="@style/CheckImageButton"
-                android:src="@drawable/simplex1"
-                android:onClick="checkPicture7"/>
+                android:onClick="checkPicture7"
+                android:src="@drawable/simplex1" />
 
             <ImageView
                 android:id="@+id/check7"
                 style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture7"
-                android:layout_alignTop="@+id/picture7"/>
+                android:layout_alignTop="@+id/picture7" />
 
         </RelativeLayout>
 
@@ -190,14 +190,14 @@
             <ImageButton
                 android:id="@+id/picture8"
                 style="@style/CheckImageButton"
-                android:src="@drawable/simplex2"
-                android:onClick="checkPicture8"/>
+                android:onClick="checkPicture8"
+                android:src="@drawable/simplex2" />
 
             <ImageView
                 android:id="@+id/check8"
                 style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture8"
-                android:layout_alignTop="@+id/picture8"/>
+                android:layout_alignTop="@+id/picture8" />
 
         </RelativeLayout>
 
@@ -210,19 +210,18 @@
             <ImageButton
                 android:id="@+id/picture9"
                 style="@style/CheckImageButton"
-                android:src="@drawable/simplex3"
-                android:onClick="checkPicture9"/>
+                android:onClick="checkPicture9"
+                android:src="@drawable/simplex3" />
 
             <ImageView
                 android:id="@+id/check9"
                 style="@style/CheckImage"
                 android:layout_alignRight="@+id/picture9"
-                android:layout_alignTop="@+id/picture9"/>
+                android:layout_alignTop="@+id/picture9" />
 
         </RelativeLayout>
 
     </android.support.v7.widget.GridLayout>
-
 
 
     <Button

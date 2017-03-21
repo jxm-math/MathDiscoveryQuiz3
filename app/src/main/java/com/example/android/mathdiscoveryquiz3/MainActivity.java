@@ -23,13 +23,9 @@ import static android.os.Build.VERSION_CODES.M;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.welcome_layout);
-    }
-
     boolean pict1 = false;
+
+    /* one boolean variable for each ImageButton, indicating whether selected or not */
     boolean pict2 = false;
     boolean pict3 = false;
     boolean pict4 = false;
@@ -38,81 +34,82 @@ public class MainActivity extends AppCompatActivity {
     boolean pict7 = false;
     boolean pict8 = false;
     boolean pict9 = false;
+    String[] listOfTopics = {"fractal", "golden", "simplex", "exponential", "physics"}; /* list of topic keywords */
+    List<Integer> numbersOfTopics = new ArrayList<>(); /* to index the topics */
+    List<Integer> numbersOfPictures = new ArrayList<>(); /* to index the pictures */
+    List<Integer> numbersOfButtons = new ArrayList<>(); /* to index the 9 buttons */
+    int stage = 0; /* number of quizzes made during the app */
 
-    String[] listOfTopics = {"fractal", "golden", "simplex", "exponential", "physics"};
-
-    List<Integer> numbersOfTopics = new ArrayList<>();
-
-    List<Integer> numbersOfPictures = new ArrayList<>();
-
-    int stage = 0;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.welcome_layout); /* app starts with the welcome layout */
+    }
 
     /* Switches view to main activity */
     public void start(View view) {
         setContentView(R.layout.activity_main);
 
-        /* Shuffles the possible topics */
+        /* Creates and shuffles the possible topics */
         for (int i = 0; i < listOfTopics.length; i++) {
             numbersOfTopics.add(i);
         }
         Collections.shuffle(numbersOfTopics);
-        /* verbose */
-        for (int number : numbersOfTopics){
-            Log.v("topic: ", listOfTopics[number]);
-        }
 
         /* Creates the list of possible pictures */
-        Log.v("creation: ", "list of possible pictures succesfully created");
         for (int i = 0; i < listOfTopics.length * 3; i++) {
             numbersOfPictures.add(i);
         }
 
-        buildQuiz();
+        /* Creates the list of 9 buttons */
+        for (int i = 1; i <= 9; i++) {
+            numbersOfButtons.add(i);
+        }
+
+        buildQuiz(); /* start the first quiz */
 
     }
 
     /* Builds a new quiz */
     public void buildQuiz() {
+
+        /* Updates the topic related to the quiz */
         TextView topicQuestion = (TextView) findViewById(R.id.topicQuestionView);
         topicQuestion.setText(listOfTopics[numbersOfTopics.get(stage)] + "?");
 
+        /* Shuffles the ImageButtons */
+        Collections.shuffle(numbersOfButtons);
 
-
-        Collections.shuffle(numbersOfPictures);
-        /* verbose */
-        for (int number : numbersOfPictures){
-            Log.v("topic: ", "" + number);
-        }
-        int assignedCheckButtons = 0;
-        int assignedFalseCheckButtons = 0;
-        int searchedPicture = 0;
-        List<Integer> truePictures = new ArrayList<>();
-        while (assignedCheckButtons < 9) {
-            Log.v("state: ", assignedCheckButtons + " " + assignedFalseCheckButtons + " " + searchedPicture);
-            int identImageButton = getResources().getIdentifier("picture" + (assignedCheckButtons + 1), "id", getPackageName());
-            Log.v("state: ", "recoge el id: " + identImageButton);
+        /* True pictures are assigned for the first three buttons */
+        for (int i = 0; i <= 2; i++) {
+            int identImageButton = getResources().getIdentifier("picture" + numbersOfButtons.get(i), "id", getPackageName());
             ImageButton imageButton = (ImageButton) findViewById(identImageButton);
-            int candidate = numbersOfPictures.get(searchedPicture);
-            Log.v("candidate: ", "" + candidate);
-            int identDrawable = getResources().getIdentifier(listOfTopics[candidate / 3] + (candidate % 3 + 1), "drawable", getPackageName());
+            int identDrawable = getResources().getIdentifier(listOfTopics[numbersOfTopics.get(stage)] + (i + 1), "drawable", getPackageName());
+            imageButton.setImageResource(identDrawable);
+        }
 
-            if ( candidate / 3 == numbersOfTopics.get(stage) ){
-                imageButton.setImageResource(identDrawable);
-                assignedCheckButtons = assignedCheckButtons + 1;
-                truePictures.add(assignedCheckButtons);
-            } else if ( assignedFalseCheckButtons < 6 ) {
-                imageButton.setImageResource(identDrawable);
-                assignedCheckButtons = assignedCheckButtons + 1;
-                assignedFalseCheckButtons = assignedFalseCheckButtons + 1;
+        /* Shuffles the pictures in order to assign the false pictures */
+        Collections.shuffle(numbersOfPictures);
+
+        int searchedPicture = 0; /* which picture is to be proposed as a false picture */
+        boolean foundFalsePicture; /* whether a false picture has been found */
+
+        /* False pictures are assigned for the last six buttons */
+        for (int i = 3; i <= 8; i++) {
+            foundFalsePicture = false;
+            int identImageButton = getResources().getIdentifier("picture" + numbersOfButtons.get(i), "id", getPackageName());
+            ImageButton imageButton = (ImageButton) findViewById(identImageButton);
+            while (!foundFalsePicture) {
+                int candidate = numbersOfPictures.get(searchedPicture);
+                /* Checks that the candidate does not match the quiz topic */
+                if (candidate / 3 != numbersOfTopics.get(stage)) {
+                    int identDrawable = getResources().getIdentifier(listOfTopics[candidate / 3] + (candidate % 3 + 1), "drawable", getPackageName());
+                    imageButton.setImageResource(identDrawable);
+                    foundFalsePicture = true;
+                }
+                searchedPicture = searchedPicture + 1;
             }
-
-            searchedPicture = searchedPicture + 1;
         }
-
-        for (int number : truePictures){
-            Log.v("truePicture: ", "" + number);
-        }
-
     }
 
     /* Toggles the visibility of the check mark 1*/
