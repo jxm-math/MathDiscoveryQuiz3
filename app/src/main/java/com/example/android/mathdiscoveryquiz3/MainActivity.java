@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,22 +24,22 @@ import static android.os.Build.VERSION_CODES.M;
 
 public class MainActivity extends AppCompatActivity {
 
-    boolean pict1 = false;
-
     /* one boolean variable for each ImageButton, indicating whether selected or not */
-    boolean pict2 = false;
-    boolean pict3 = false;
-    boolean pict4 = false;
-    boolean pict5 = false;
-    boolean pict6 = false;
-    boolean pict7 = false;
-    boolean pict8 = false;
-    boolean pict9 = false;
+    boolean pict1;
+    boolean pict2;
+    boolean pict3;
+    boolean pict4;
+    boolean pict5;
+    boolean pict6;
+    boolean pict7;
+    boolean pict8;
+    boolean pict9;
+
     String[] listOfTopics = {"fractal", "golden", "simplex", "exponential", "physics"}; /* list of topic keywords */
     List<Integer> numbersOfTopics = new ArrayList<>(); /* to index the topics */
     List<Integer> numbersOfPictures = new ArrayList<>(); /* to index the pictures */
     List<Integer> numbersOfButtons = new ArrayList<>(); /* to index the 9 buttons */
-    int stage = 0; /* number of quizzes made during the app */
+    int stage = -1; /* number of quizzes made during the app */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +47,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.welcome_layout); /* app starts with the welcome layout */
     }
 
-    /* Switches view to main activity */
+    /* Creates the variables needed for the entire game */
     public void start(View view) {
-        setContentView(R.layout.activity_main);
 
         /* Creates and shuffles the possible topics */
         for (int i = 0; i < listOfTopics.length; i++) {
@@ -66,12 +66,34 @@ public class MainActivity extends AppCompatActivity {
             numbersOfButtons.add(i);
         }
 
-        buildQuiz(); /* start the first quiz */
+        buildQuiz(); /* starts the first quiz */
 
     }
 
     /* Builds a new quiz */
     public void buildQuiz() {
+
+        if (stage == 2) {
+            setContentView(R.layout.survey_layout);
+            return;
+        }
+
+        /* Updates the stage */
+        stage = stage + 1;
+
+        /* The game starts with everything unchecked */
+        pict1 = false;
+        pict2 = false;
+        pict3 = false;
+        pict4 = false;
+        pict5 = false;
+        pict6 = false;
+        pict7 = false;
+        pict8 = false;
+        pict9 = false;
+
+        /* Switches view to main activity */
+        setContentView(R.layout.activity_main);
 
         /* Updates the topic related to the quiz */
         TextView topicQuestion = (TextView) findViewById(R.id.topicQuestionView);
@@ -112,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /* Toggles the visibility of the check mark 1*/
+    /* Toggles the visibility of the check mark 1 */
     public void checkPicture1(View view) {
         pict1 = !pict1;
         ImageView checkImage = (ImageView) findViewById(R.id.check1);
@@ -123,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /* Toggles the visibility of the check mark 2*/
+    /* Toggles the visibility of the check mark 2 */
     public void checkPicture2(View view) {
         pict2 = !pict2;
         ImageView checkImage = (ImageView) findViewById(R.id.check2);
@@ -134,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /* Toggles the visibility of the check mark 3*/
+    /* Toggles the visibility of the check mark 3 */
     public void checkPicture3(View view) {
         pict3 = !pict3;
         ImageView checkImage = (ImageView) findViewById(R.id.check3);
@@ -145,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /* Toggles the visibility of the check mark 4*/
+    /* Toggles the visibility of the check mark 4 */
     public void checkPicture4(View view) {
         pict4 = !pict4;
         ImageView checkImage = (ImageView) findViewById(R.id.check4);
@@ -156,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /* Toggles the visibility of the check mark 5*/
+    /* Toggles the visibility of the check mark 5 */
     public void checkPicture5(View view) {
         pict5 = !pict5;
         ImageView checkImage = (ImageView) findViewById(R.id.check5);
@@ -167,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /* Toggles the visibility of the check mark 6*/
+    /* Toggles the visibility of the check mark 6 */
     public void checkPicture6(View view) {
         pict6 = !pict6;
         ImageView checkImage = (ImageView) findViewById(R.id.check6);
@@ -178,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /* Toggles the visibility of the check mark 7*/
+    /* Toggles the visibility of the check mark 7 */
     public void checkPicture7(View view) {
         pict7 = !pict7;
         ImageView checkImage = (ImageView) findViewById(R.id.check7);
@@ -189,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /* Toggles the visibility of the check mark 8*/
+    /* Toggles the visibility of the check mark 8 */
     public void checkPicture8(View view) {
         pict8 = !pict8;
         ImageView checkImage = (ImageView) findViewById(R.id.check8);
@@ -200,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /* Toggles the visibility of the check mark 9*/
+    /* Toggles the visibility of the check mark 9 */
     public void checkPicture9(View view) {
         pict9 = !pict9;
         ImageView checkImage = (ImageView) findViewById(R.id.check9);
@@ -209,6 +231,78 @@ public class MainActivity extends AppCompatActivity {
         } else {
             checkImage.setVisibility(View.INVISIBLE);
         }
+    }
+
+    /* Checks quiz 9*/
+    public void checkQuiz(View view) {
+        int intPict1 = (pict1) ? 1 : 0;
+        int intPict2 = (pict2) ? 1 : 0;
+        int intPict3 = (pict3) ? 1 : 0;
+        int intPict4 = (pict4) ? 1 : 0;
+        int intPict5 = (pict5) ? 1 : 0;
+        int intPict6 = (pict6) ? 1 : 0;
+        int intPict7 = (pict7) ? 1 : 0;
+        int intPict8 = (pict8) ? 1 : 0;
+        int intPict9 = (pict9) ? 1 : 0;
+
+        int numberCheckedButtons = intPict1 + intPict2 + intPict3 + intPict4 + intPict5 + intPict6 + intPict7 + intPict8 + intPict9;
+
+        if (numberCheckedButtons != 3) {
+            Toast.makeText(this, "Please check exactly 3 pictures", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int hits = 0;
+        for (int i = 0; i <= 2; i++) {
+            int truePicture = numbersOfButtons.get(i);
+            boolean hitCondition = (pict1 && 1 == truePicture)
+                    || (pict2 && 2 == truePicture)
+                    || (pict3 && 3 == truePicture)
+                    || (pict4 && 4 == truePicture)
+                    || (pict5 && 5 == truePicture)
+                    || (pict6 && 6 == truePicture)
+                    || (pict7 && 7 == truePicture)
+                    || (pict8 && 8 == truePicture)
+                    || (pict9 && 9 == truePicture);
+            if (hitCondition) {
+                hits = hits + 1;
+            }
+
+        }
+
+        if (hits == 0) {
+            Toast.makeText(this, "Ooops! You have no right answers... try again!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (hits == 1) {
+            Toast.makeText(this, "One hit... keep trying!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (hits == 2) {
+            Toast.makeText(this, "Two hits! You almost have it... ", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (hits == 3) {
+            Toast.makeText(this, "AWESOME!!", Toast.LENGTH_SHORT).show();
+            setContentView(R.layout.explanation_layout);
+        }
+
+
+    }
+
+    /* Asks for a new quiz */
+    public void startNewQuiz(View view) {
+
+        buildQuiz(); /* starts another quiz */
+
+    }
+
+    /* Leads to the final view */
+    public void finalView(View view) {
+        setContentView(R.layout.final_layout);
     }
 
 }

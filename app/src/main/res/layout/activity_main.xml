@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:padding="8dp"
-        android:text="Which of the following pictures has to do with..."
+        android:text="Which 3 of the following pictures has to do with..."
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="20sp" />
 
@@ -229,6 +229,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="0"
+        android:onClick="checkQuiz"
         android:text="check" />
 
 </LinearLayout>

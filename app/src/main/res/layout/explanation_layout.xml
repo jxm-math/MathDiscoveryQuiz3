@@ -15,7 +15,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:padding="8dp"
-        android:text="MathDiscoveryQuiz3"
+        android:text="You got everything right!!"
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="24sp" />
 
@@ -29,8 +29,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:onClick="start"
-            android:text="Play!" />
+            android:onClick="startNewQuiz"
+            android:text="New quiz" />
 
     </RelativeLayout>
 
