@@ -1,11 +1,19 @@
 <resources>
     <string name="app_name">MathDiscoveryQuiz3</string>
 
+    <string name="fractal">Fractals</string>
+
     <string name="expl_fractal1">The shapes of lightnings are indeed fractal!</string>
 
     <string name="expl_fractal2">Have you ever seen such a beautiful fractal? It\'s a Julia fractal</string>
 
     <string name="expl_fractal3">Fractals in snow crystals</string>
+
+    <string name="wikipedia_fractal">https://en.wikipedia.org/wiki/Fractal</string>
+
+    <string name="mathifold_fractal">http://mathifold.org/subjects/en/fractal_geometry.html</string>
+
+    <string name="golden">Golden Number</string>
 
     <string name="expl_golden1">The Nautilus shell has the shape of a golden spiral</string>
 
@@ -13,11 +21,23 @@
 
     <string name="expl_golden3">A regular pentagon contains the golden ratio in its sides</string>
 
+    <string name="wikipedia_golden">https://en.wikipedia.org/wiki/Golden_ratio</string>
+
+    <string name="mathifold_golden">http://mathifold.org/en/applet_numerical_flowers.html</string>
+
+    <string name="simplex">Operational Research</string>
+
     <string name="expl_simplex1">Operational Research is helpful when dealing with many restrictions, like in an airport!</string>
 
     <string name="expl_simplex2">Graph Theory is one of the branches of Operational Research</string>
 
     <string name="expl_simplex3">The Simplex Method is the core of the very efficient Linear Programming in Operational Research</string>
+
+    <string name="wikipedia_simplex">https://en.wikipedia.org/wiki/Operations_research</string>
+
+    <string name="mathifold_simplex">http://mathifold.org/topics/en/operational_research.html</string>
+
+    <string name="exponential">Exponential Function</string>
 
     <string name="expl_exponential1">The shape of hanging ropes is not a parabola... It\'s a catenary!! And this is related with exponential functions</string>
 
@@ -25,9 +45,19 @@
 
     <string name="expl_exponential3">Nuclear fission may be modelled by exponential functions </string>
 
+    <string name="wikipedia_exponential">https://en.wikipedia.org/wiki/Exponential_function</string>
+
+    <string name="mathifold_exponential">http://mathifold.org/subjects/en/functions.html</string>
+
+    <string name="physics">Mathematical Physics</string>
+
     <string name="expl_physics1">In Quantum Mechanichs, particles are no longer points, but waves! So get ready to use maths to work with them...</string>
 
     <string name="expl_physics2">Einstein\'s Theory of General Relativity needs the language of maths to describe the curvature of space-time</string>
 
     <string name="expl_physics3">Electromagnetism (ruled by Maxwell\'s laws) is contained in every single electric device... Imagine a world without electromagnetism!!</string>
+
+    <string name="wikipedia_physics">https://en.wikipedia.org/wiki/Mathematical_physics</string>
+
+    <string name="mathifold_physics">http://mathifold.org/subjects/en/physics.html</string>
 </resources>

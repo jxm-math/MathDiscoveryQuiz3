@@ -11,7 +11,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="16dp"
         android:layout_weight="1"
         android:gravity="center"
         android:padding="8dp"
@@ -19,20 +19,40 @@
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="24sp" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
-        <Button
+        <RadioButton
+            android:id="@+id/radio_topic1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:onClick="finalView"
-            android:text="Submit" />
+            android:onClick="finalView1"
+            android:padding="16dp"
+            android:text="topic1"
+            android:textSize="24dp" />
 
-    </RelativeLayout>
+        <RadioButton
+            android:id="@+id/radio_topic2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="finalView2"
+            android:padding="16dp"
+            android:text="topic2"
+            android:textSize="24dp" />
+
+        <RadioButton
+            android:id="@+id/radio_topic3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="finalView3"
+            android:padding="16dp"
+            android:text="topic3"
+            android:textSize="24dp" />
+    </RadioGroup>
+
 
     <Space
         android:layout_width="match_parent"

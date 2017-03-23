@@ -23,20 +23,20 @@
 
 
         <ImageView
+            android:id="@+id/explPict1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/fractal1"
-            android:id="@+id/explPict1"/>
+            android:src="@drawable/fractal1" />
 
         <TextView
+            android:id="@+id/explText1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="8dp"
-            android:textSize="16sp"
             android:text="text1"
-            android:id="@+id/explText1"/>
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -48,22 +48,21 @@
         android:padding="8dp">
 
 
-
         <ImageView
+            android:id="@+id/explPict2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/fractal2"
-            android:id="@+id/explPict2"/>
+            android:src="@drawable/fractal2" />
 
         <TextView
+            android:id="@+id/explText2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="8dp"
-            android:textSize="16sp"
             android:text="text2"
-            android:id="@+id/explText2"/>
+            android:textSize="16sp" />
 
 
     </LinearLayout>
@@ -76,22 +75,21 @@
         android:padding="8dp">
 
 
-
         <ImageView
+            android:id="@+id/explPict3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/fractal3"
-            android:id="@+id/explPict3"/>
+            android:src="@drawable/fractal3" />
 
         <TextView
+            android:id="@+id/explText3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="8dp"
-            android:textSize="16sp"
             android:text="text3"
-            android:id="@+id/explText3"/>
+            android:textSize="16sp" />
 
     </LinearLayout>
 

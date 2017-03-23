@@ -1,6 +1,8 @@
 package com.example.android.mathdiscoveryquiz3;
 
+import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayout;
@@ -8,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,8 +21,10 @@ import java.util.Objects;
 
 import static android.R.attr.id;
 import static android.R.attr.max;
+import static android.R.attr.name;
 import static android.R.attr.visible;
 import static android.R.id.list;
+import static android.R.id.message;
 import static android.os.Build.VERSION_CODES.M;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     List<Integer> numbersOfPictures = new ArrayList<>(); /* to index the pictures */
     List<Integer> numbersOfButtons = new ArrayList<>(); /* to index the 9 buttons */
     int stage = -1; /* number of quizzes made during the app */
+
+    String chosen = ""; /* chosen topic for further references */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
 
         /* Updates the topic related to the quiz */
         TextView topicQuestion = (TextView) findViewById(R.id.topicQuestionView);
-        topicQuestion.setText(listOfTopics[numbersOfTopics.get(stage)] + "?");
+        int identQuizTopic = getResources().getIdentifier(listOfTopics[numbersOfTopics.get(stage)], "string", getPackageName());
+        topicQuestion.setText(String.format("%s?", getString(identQuizTopic)));
 
         /* Shuffles the ImageButtons */
         Collections.shuffle(numbersOfButtons);
@@ -306,14 +314,14 @@ public class MainActivity extends AppCompatActivity {
 
         /* Explanations are set */
         for (int i = 0; i <= 2; i++) {
-            int identExplPicture = getResources().getIdentifier("explPict" + (i+1), "id", getPackageName());
+            int identExplPicture = getResources().getIdentifier("explPict" + (i + 1), "id", getPackageName());
             ImageView imageView = (ImageView) findViewById(identExplPicture);
             int identDrawable = getResources().getIdentifier(listOfTopics[numbersOfTopics.get(stage)] + (i + 1), "drawable", getPackageName());
             imageView.setImageResource(identDrawable);
 
-            int identExplText = getResources().getIdentifier("explText" + (i+1), "id", getPackageName());
+            int identExplText = getResources().getIdentifier("explText" + (i + 1), "id", getPackageName());
             TextView textView = (TextView) findViewById(identExplText);
-            int identExplString = getResources().getIdentifier( "expl_" + listOfTopics[numbersOfTopics.get(stage)] + (i+1), "string", getPackageName());
+            int identExplString = getResources().getIdentifier("expl_" + listOfTopics[numbersOfTopics.get(stage)] + (i + 1), "string", getPackageName());
             textView.setText(identExplString);
         }
 
@@ -321,15 +329,75 @@ public class MainActivity extends AppCompatActivity {
 
     public void survey() {
         setContentView(R.layout.survey_layout);
+
+        /* Radio Buttons are set */
+        for (int i = 0; i <= 2; i++) {
+            int identRadioButton = getResources().getIdentifier("radio_topic" + (i + 1), "id", getPackageName());
+            RadioButton radioButton = (RadioButton) findViewById(identRadioButton);
+            int identRadioString = getResources().getIdentifier(listOfTopics[numbersOfTopics.get(i)], "string", getPackageName());
+            radioButton.setText(identRadioString);
+        }
     }
 
-    /* Leads to the final view */
-    public void finalView(View view) {
+    /* Leads to the final view for radio button 1 */
+    public void finalView1(View view) {
+
         setContentView(R.layout.final_layout);
+        chosen = listOfTopics[numbersOfTopics.get(0)];
+        int identChosenTopic = getResources().getIdentifier(chosen, "string", getPackageName());
+        TextView chosenTopic = (TextView) findViewById(R.id.chosen_topic);
+        chosenTopic.setText(identChosenTopic);
     }
 
+    /* Leads to the final view for radio button 2 */
+    public void finalView2(View view) {
 
+        setContentView(R.layout.final_layout);
+        chosen = listOfTopics[numbersOfTopics.get(1)];
+        int identChosenTopic = getResources().getIdentifier(chosen, "string", getPackageName());
+        TextView chosenTopic = (TextView) findViewById(R.id.chosen_topic);
+        chosenTopic.setText(identChosenTopic);
+    }
+
+    /* Leads to the final view for radio button 3 */
+    public void finalView3(View view) {
+
+        setContentView(R.layout.final_layout);
+        chosen = listOfTopics[numbersOfTopics.get(2)];
+        int identChosenTopic = getResources().getIdentifier(chosen, "string", getPackageName());
+        TextView chosenTopic = (TextView) findViewById(R.id.chosen_topic);
+        chosenTopic.setText(identChosenTopic);
+    }
+
+    /* Intents to Wikipedia webpage */
+    public void intentWikipedia(View view) {
+
+        int identWebpage = getResources().getIdentifier("wikipedia_" + chosen, "string", getPackageName());
+        String nameWebpage = getResources().getString(identWebpage);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(nameWebpage));
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
+    /* Intents to Mathifold webpage */
+    public void intentMathifold(View view) {
+
+        int identWebpage = getResources().getIdentifier("mathifold_" + chosen, "string", getPackageName());
+        String nameWebpage = getResources().getString(identWebpage);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(nameWebpage));
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
 
 }
+
+
+
 
 
