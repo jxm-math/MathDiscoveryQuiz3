@@ -23,12 +23,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2.5"
             android:gravity="center"
-            android:padding="8dp"
-            android:text="MathDiscoveryQuiz3"
+            android:text="Math\nDiscovery\nQuiz\n3"
             android:textColor="@android:color/holo_orange_dark"
-            android:textSize="24sp" />
+            android:textAllCaps="true"
+            android:textSize="40sp" />
 
         <RelativeLayout
             android:layout_width="match_parent"

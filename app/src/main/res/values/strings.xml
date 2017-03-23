@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">MathDiscoveryQuiz3</string>
+
+    <string name="expl_fractal1">The shapes of lightnings are indeed fractal!</string>
+
+    <string name="expl_fractal2">Have you ever seen such a beautiful fractal? It\'s a Julia fractal</string>
+
+    <string name="expl_fractal3">Fractals in snow crystals</string>
+
+    <string name="expl_golden1">The Nautilus shell has the shape of a golden spiral</string>
+
+    <string name="expl_golden2">The arrangement of flower seeds follows a golden-Fibonacci pattern</string>
+
+    <string name="expl_golden3">A regular pentagon contains the golden ratio in its sides</string>
+
+    <string name="expl_simplex1">Operational Research is helpful when dealing with many restrictions, like in an airport!</string>
+
+    <string name="expl_simplex2">Graph Theory is one of the branches of Operational Research</string>
+
+    <string name="expl_simplex3">The Simplex Method is the core of the very efficient Linear Programming in Operational Research</string>
+
+    <string name="expl_exponential1">The shape of hanging ropes is not a parabola... It\'s a catenary!! And this is related with exponential functions</string>
+
+    <string name="expl_exponential2">There are many exponential behaviours in everyday processes - compound interest, for instance</string>
+
+    <string name="expl_exponential3">Nuclear fission may be modelled by exponential functions </string>
+
+    <string name="expl_physics1">In Quantum Mechanichs, particles are no longer points, but waves! So get ready to use maths to work with them...</string>
+
+    <string name="expl_physics2">Einstein\'s Theory of General Relativity needs the language of maths to describe the curvature of space-time</string>
+
+    <string name="expl_physics3">Electromagnetism (ruled by Maxwell\'s laws) is contained in every single electric device... Imagine a world without electromagnetism!!</string>
 </resources>

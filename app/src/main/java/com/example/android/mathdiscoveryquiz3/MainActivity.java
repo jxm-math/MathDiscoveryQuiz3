@@ -73,8 +73,9 @@ public class MainActivity extends AppCompatActivity {
     /* Builds a new quiz */
     public void buildQuiz() {
 
+        /* If the three quizzes have been done, the app moves to the survey of the most liked topic */
         if (stage == 2) {
-            setContentView(R.layout.survey_layout);
+            survey();
             return;
         }
 
@@ -233,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /* Checks quiz 9*/
+    /* Checks quiz */
     public void checkQuiz(View view) {
         int intPict1 = (pict1) ? 1 : 0;
         int intPict2 = (pict2) ? 1 : 0;
@@ -287,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (hits == 3) {
             Toast.makeText(this, "AWESOME!!", Toast.LENGTH_SHORT).show();
-            setContentView(R.layout.explanation_layout);
+            explain();
         }
 
 
@@ -300,9 +301,35 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void explain() {
+        setContentView(R.layout.explanation_layout);
+
+        /* Explanations are set */
+        for (int i = 0; i <= 2; i++) {
+            int identExplPicture = getResources().getIdentifier("explPict" + (i+1), "id", getPackageName());
+            ImageView imageView = (ImageView) findViewById(identExplPicture);
+            int identDrawable = getResources().getIdentifier(listOfTopics[numbersOfTopics.get(stage)] + (i + 1), "drawable", getPackageName());
+            imageView.setImageResource(identDrawable);
+
+            int identExplText = getResources().getIdentifier("explText" + (i+1), "id", getPackageName());
+            TextView textView = (TextView) findViewById(identExplText);
+            int identExplString = getResources().getIdentifier( "expl_" + listOfTopics[numbersOfTopics.get(stage)] + (i+1), "string", getPackageName());
+            textView.setText(identExplString);
+        }
+
+    }
+
+    public void survey() {
+        setContentView(R.layout.survey_layout);
+    }
+
     /* Leads to the final view */
     public void finalView(View view) {
         setContentView(R.layout.final_layout);
     }
 
+
+
 }
+
+
