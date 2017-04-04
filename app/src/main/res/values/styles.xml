@@ -4,7 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#FF9800</item>
-        <item name="colorPrimaryDark">#FB8C00</item>
+        <item name="colorPrimaryDark">#FF7700</item>
         <item name="colorButtonNormal">#FF9800</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
@@ -23,7 +23,7 @@
     <style name="CheckImage">
         <item name="android:layout_width">32dp</item>
         <item name="android:layout_height">32dp</item>
-        <item name="android:layout_margin">8dp</item>
+        <item name="android:layout_margin">@dimen/standard_padding</item>
         <item name="android:visibility">invisible</item>
         <item name="android:src">@drawable/check</item>
     </style>

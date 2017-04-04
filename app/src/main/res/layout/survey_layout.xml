@@ -11,13 +11,13 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="16dp"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:padding="8dp"
+        android:padding="@dimen/standard_padding"
         android:text="Which topic did you like most?"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="24sp" />
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/intro_text_size" />
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -30,27 +30,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="finalView1"
-            android:padding="16dp"
+            android:padding="@dimen/radio_padding"
             android:text="topic1"
-            android:textSize="24dp" />
+            android:textSize="@dimen/intro_text_size" />
 
         <RadioButton
             android:id="@+id/radio_topic2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="finalView2"
-            android:padding="16dp"
+            android:padding="@dimen/radio_padding"
             android:text="topic2"
-            android:textSize="24dp" />
+            android:textSize="@dimen/intro_text_size" />
 
         <RadioButton
             android:id="@+id/radio_topic3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="finalView3"
-            android:padding="16dp"
+            android:padding="@dimen/radio_padding"
             android:text="topic3"
-            android:textSize="24dp" />
+            android:textSize="@dimen/intro_text_size" />
     </RadioGroup>
 
 

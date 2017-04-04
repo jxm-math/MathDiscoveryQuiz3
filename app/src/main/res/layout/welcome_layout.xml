@@ -27,8 +27,8 @@
             android:gravity="center"
             android:text="Math\nDiscovery\nQuiz\n3"
             android:textAllCaps="true"
-            android:textColor="@android:color/holo_orange_dark"
-            android:textSize="40sp" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/topic_text_size" />
 
         <RelativeLayout
             android:layout_width="match_parent"

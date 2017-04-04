@@ -12,10 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:padding="8dp"
+        android:padding="@dimen/standard_padding"
         android:text="Which 3 of the following pictures has to do with..."
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="20sp" />
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/intro_text_size" />
 
     <TextView
         android:id="@+id/topicQuestionView"
@@ -23,11 +23,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="0"
-        android:padding="8dp"
+        android:padding="@dimen/standard_padding"
         android:text="topic?"
         android:textAllCaps="true"
-        android:textColor="@android:color/holo_orange_light"
-        android:textSize="40sp" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/topic_text_size" />
 
     <android.support.v7.widget.GridLayout
         android:id="@+id/choice_grid"
@@ -229,6 +229,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="0"
+        android:layout_margin="@dimen/standard_margin"
         android:onClick="checkQuiz"
         android:text="check" />
 
